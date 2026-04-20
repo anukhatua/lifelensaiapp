@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="analyze-wrapper">
+
+<h2 class="page-title">⚡ Lifestyle Analysis</h2>
+
+<form action="/loading" method="POST">
+
+    <!-- PERSONAL -->
+    <div class="form-card">
+        <h3>👤 Personal Details</h3>
+
+        <div class="input-grid">
+
+            <div class="field">
+                <label>Age</label>
+                <input type="number" name="age" required>
+            </div>
+
+            <div class="field">
+                <label>Gender</label>
+                <select name="gender" required>
+                    <option disabled selected>Select Gender</option>
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- HEALTH -->
+    <div class="form-card">
+        <h3>🏃 Health Metrics</h3>
+
+        <div class="input-grid">
+
+            <div class="field">
+                <label>Daily Steps</label>
+                <input type="number" name="steps" required>
+            </div>
+
+            <div class="field">
+                <label>Calories Intake</label>
+                <input type="number" name="calories" required>
+            </div>
+
+            <div class="field">
+                <label>Heart Rate (BPM)</label>
+                <input type="number" name="heart_rate" required>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- LIFESTYLE -->
+    <div class="form-card">
+        <h3>🌿 Lifestyle</h3>
+
+        <div class="input-grid">
+
+            <div class="field">
+                <label>Sleep Hours</label>
+                <input type="number" step="0.1" name="sleep">
+            </div>
+
+            <div class="field">
+                <label>Water Intake (L)</label>
+                <input type="number" step="0.1" name="water">
+            </div>
+
+            <div class="field">
+                <label>Activity Level</label>
+                <select name="activity">
+                    <option disabled selected>Select</option>
+                    <option>Low</option>
+                    <option>Moderate</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Diet Type</label>
+                <select name="diet">
+                    <option disabled selected>Select</option>
+                    <option>Healthy</option>
+                    <option>Unhealthy</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Smoking</label>
+                <select name="smoking">
+                    <option disabled selected>Select</option>
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label>Alcohol</label>
+                <select name="alcohol">
+                    <option disabled selected>Select</option>
+                    <option>No</option>
+                    <option>Low</option>
+                    <option>Moderate</option>
+                    <option>High</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-submit">
+        <button type="submit" class="btn-primary">🚀 Analyze Now</button>
+    </div>
+
+</form>
+
+</div>
+
+{% endblock %}

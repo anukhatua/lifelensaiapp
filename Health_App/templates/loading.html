@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="loading-container">
+
+    <h2>🧠 AI is analyzing your lifestyle...</h2>
+
+    <div class="spinner"></div>
+
+    <p id="loading-text" class="loading-text">
+        Preparing analysis...
+    </p>
+
+</div>
+
+<form id="hidden-form" action="/predict" method="POST">
+{% for key, value in data.items() %}
+<input type="hidden" name="{{key}}" value="{{value}}">
+{% endfor %}
+</form>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% endblock %}

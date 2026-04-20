@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">📝 Feedback</h2>
+
+<p class="subtext">
+How likely are you to recommend this app?
+</p>
+
+{% if success %}
+<div class="success-box">
+    ✅ Thank you! Your feedback has been submitted.
+</div>
+{% endif %}
+
+<div class="feedback-wrapper">
+
+    <form method="POST" class="feedback-form">
+
+        <!-- RATING SCALE -->
+        <div class="rating-scale">
+            {% for i in range(0,11) %}
+                <label>
+                    <input type="radio" name="rating" value="{{i}}" required>
+                    <span>{{i}}</span>
+                </label>
+            {% endfor %}
+        </div>
+
+        <div class="rating-labels">
+            <span>0 - Low</span>
+            <span>10 - High</span>
+        </div>
+
+        <!-- FEEDBACK -->
+        <label>What can we improve?</label>
+        <textarea name="message" placeholder="Your suggestions..." rows="4"></textarea>
+
+        <!-- EMAIL -->
+        <label>Email (optional)</label>
+        <input type="email" name="email" placeholder="you@example.com">
+
+        <!-- BUTTON -->
+        <button type="submit" class="btn-primary full-btn">
+            Send Feedback
+        </button>
+
+    </form>
+
+</div>
+
+{% endblock %}

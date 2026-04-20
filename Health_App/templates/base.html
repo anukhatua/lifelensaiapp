@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LifeLens AI</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<!-- HEADER -->
+<header class="top-header header-flex">
+
+    <img src="{{ url_for('static', filename='images/logo2.png') }}" class="app-logo">
+
+    <div class="header-text">
+        <h1 class="logo">LifeLens AI</h1>
+
+        <p class="tagline-main">
+            Decode your Life
+        </p>
+
+    </div>
+
+</header>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/analyze" class="nav-link">Analyze</a>
+        <a href="/insights" class="nav-link">Wellness Hub</a>
+        <a href="/contact" class="nav-link">Feedback</a>
+        <a href="/developer" class="nav-link">Developer</a>
+    </div>
+</nav>
+
+<!-- CONTENT -->
+<div class="container fade-in">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Lifelens AI | Built by Anushka Khatua</p>
+</footer>
+
+</body>
+</html>
